@@ -22,5 +22,9 @@ public class AppTest {
     @Test
     public void testAspect(){
         userInfoService.add();
+        System.out.println("-------------------------------------------");
+        userInfoService.query(10);
+        System.out.println("-------------------------------------------");
+        userInfoService.update();
     }
 }

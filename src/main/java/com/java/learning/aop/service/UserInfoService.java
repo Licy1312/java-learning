@@ -19,4 +19,12 @@ public class UserInfoService {
         return true;
     }
 
+    public String query(Integer id){
+        return "返回查询结果"+id;
+    }
+
+    public boolean update(){
+        int i = 1/0;
+        return true;
+    }
 }
