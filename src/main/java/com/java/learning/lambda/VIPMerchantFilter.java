@@ -11,4 +11,9 @@ public class VIPMerchantFilter implements MerchantFilter {
     public boolean filterMethod(Merchant merchant) {
         return merchant.getGrade()>=2;
     }
+
+    public void dealMessage(){
+        sendMessage();
+        MerchantFilter.receivedMessage();
+    }
 }
