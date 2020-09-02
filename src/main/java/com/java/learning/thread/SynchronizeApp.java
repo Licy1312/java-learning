@@ -1,5 +1,7 @@
 package com.java.learning.thread;
 
+import java.util.Date;
+
 /**
  * Description: 同步代码的学习（synchronized）
  * User:Lee
@@ -37,4 +39,42 @@ public class SynchronizeApp {
             System.out.println("线程"+thread.getName()+"结束"+b);
         }
     }
+
+    public static void synchronizedString(String a){
+        synchronized (a.intern()){
+            try {
+                System.out.println(Thread.currentThread().getName()+"in:"+a);
+                Thread.sleep(10000);
+                System.out.println(Thread.currentThread().getName()+"out:"+a);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public  synchronized void method1(String a){
+
+        try {
+            System.out.println(new Date().getTime()+","+Thread.currentThread().getName()+"in:"+a);
+            Thread.sleep(3000);
+            System.out.println(new Date().getTime()+","+Thread.currentThread().getName()+"out:"+a);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public  synchronized void method2(String a){
+
+        try {
+            System.out.println(new Date().getTime()+","+Thread.currentThread().getName()+"in:"+a);
+            Thread.sleep(2000);
+            System.out.println(new Date().getTime()+","+Thread.currentThread().getName()+"out:"+a);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

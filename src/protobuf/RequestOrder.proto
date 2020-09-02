@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package com.app.pay;
+
+
+option java_package = "com.app.pay.protobuf";
+option java_outer_classname = "RequestOrder";
+
+message PayOrderInfo {
+    required int32 requestId = 1;
+    required string checkBit = 2;
+    required string bizContent = 3;
+}

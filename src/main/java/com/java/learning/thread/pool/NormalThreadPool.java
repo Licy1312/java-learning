@@ -24,14 +24,16 @@ public class NormalThreadPool {
     private static ExecutorService cacheThreadPool = Executors.newCachedThreadPool();
 
     public static void main(String[] args){
-//        testFixThreadPool(5);
+        testFixThreadPool(5);
 
-        testCacheThreadPool(10);
+        System.out.println("test data 1");
+//        testCacheThreadPool(10);
     }
 
 
     public static void testFixThreadPool(int num){
         for(int i=1;i<=num;i++){
+            System.out.println("test data 2");
             fixThreadPool.execute(new Runnable() {
                 @Override
                 public void run() {
@@ -40,9 +42,12 @@ public class NormalThreadPool {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("执行线程"+Thread.currentThread().getName());
+                    int i= 1/0;
+                    System.out.println("this tread"+Thread.currentThread().getName());
+
                 }
             });
+            System.out.println("test data 3");
         }
     }
 
