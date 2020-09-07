@@ -14,14 +14,20 @@ public class SingleLinkedList {
     public static void main(String[] args) {
         SingleLinkedList singleLinkedList = new SingleLinkedList();
         //初始化
-        int[] values = {1,2,3,4,5,6,7};
+        int[] values = {9};
+        int[] value2 = {1,9,9,9,9,9,9,9,9,9};
 
         ListNode listNode = singleLinkedList.initNode(values);
-        ListNode[] result = singleLinkedList.splitListToParts(listNode,3);
+        ListNode listNode2 = singleLinkedList.initNode(value2);
+////        ListNode[] result = singleLinkedList.splitListToParts(listNode,3);
+//        ListNode result = singleLinkedList.addTwoNumbers(listNode,listNode2);
+//
+//        singleLinkedList.print(result);
+        System.out.println(singleLinkedList.addTwoNumbers(listNode,listNode2));
 
         //打印
-        for (int i=0;i<result.length;i++)
-        singleLinkedList.print(result[i]);
+//        for (int i=0;i<result.length;i++)
+//        singleLinkedList.print(result[i]);
 //        singleLinkedList.print(singleLinkedList.reverseList(listNode));
 
     }
@@ -160,6 +166,54 @@ public class SingleLinkedList {
         }
 
         return result;
+    }
+
+
+    /**
+     * 两数相加，
+     * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+     *
+     * 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+     *
+     * 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+     * 输出：7 -> 0 -> 8
+     * 原因：342 + 465 = 807
+     *
+     * @param l1 (2 -> 4 -> 3)
+     * @param l2  (5 -> 6 -> 4)
+     * @return 7 -> 0 -> 8
+     */
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode headResult = new ListNode(0);
+        int temp = 0;
+        ListNode curr= headResult;
+        while(l1 !=null || l2 !=null || temp !=0){
+            if(l1 != null){
+                temp += l1.value;
+                l1 = l1.next;
+            }
+            if(l2 != null){
+                temp += l2.value;
+                l2 = l2.next;
+            }
+            curr.next = new ListNode(temp%10);
+            curr = curr.next;
+            temp = temp/10;
+        }
+        return headResult.next;
+    }
+
+
+
+
+
+    public String getStringValue(ListNode l1){
+        String a = "";
+        while(l1 !=null){
+            a += l1.value+"";
+            l1 = l1.next;
+        }
+        return a;
     }
 
 

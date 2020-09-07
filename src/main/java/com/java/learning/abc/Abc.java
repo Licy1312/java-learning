@@ -101,13 +101,18 @@ public class Abc {
 //        System.out.println((-1/1.1)*100 <= 100);
 //        System.out.println((0/1.1)*100 <= 100);
 
-        double a =new BigDecimal((double)11/10).setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue()*100;
-        double b=(new BigDecimal((double)9/10).setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue())*100;
-        System.out.println(a);
-        System.out.println(b);
+//        double a =new BigDecimal((double)11/10).setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue()*100;
+//        double b=(new BigDecimal((double)9/10).setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue())*100;
+//        System.out.println(a);
+//        System.out.println(b);
+//
+//        System.out.println(a <= 100);
+//        System.out.println(b <=100 );
+        System.out.println(Math.abs(Integer.MIN_VALUE));
+        int a = 10;
+        int b = 3;
+        System.out.println((a^b)<0);
 
-        System.out.println(a <= 100);
-        System.out.println(b <=100 );
 
     }
 
@@ -137,6 +142,10 @@ public class Abc {
         int b = "张燕欣".getBytes("UTF-8").length;
         System.out.println("a的长度："+a);
         System.out.println("b的长度："+b);
+
+        String result = "0000->";
+
+       System.out.println(Math.abs(Integer.MIN_VALUE));
     }
 
 
