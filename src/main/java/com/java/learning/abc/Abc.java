@@ -132,6 +132,7 @@ public class Abc {
             tempList = new ArrayList<>();
             map.put(1,tempList);
         }
+        List<String> list = new ArrayList<>();
 
         tempList.add("lee");
         System.out.print("111");

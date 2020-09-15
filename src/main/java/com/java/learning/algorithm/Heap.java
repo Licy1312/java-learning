@@ -160,6 +160,8 @@ public class Heap {
         for(int temp : arr){
             System.out.print(temp+" ");
         }
+
+
     }
 
 
